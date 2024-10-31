@@ -3,6 +3,7 @@ class TopController < ApplicationController
     if session[:login_uid]
       redirect_to recipes_path
     else
+      @user = User.new # 新規ユーザー用インスタンス
       render :login
     end
   end

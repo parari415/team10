@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'users/new'
+  get 'users/create'
   get 'likes/create'
   get 'likes/destroy'
   get 'recipes/index'
@@ -17,6 +19,9 @@ Rails.application.routes.draw do
   get 'login', to: 'top#login'
   post 'login', to: 'top#login'
   delete 'logout', to: 'top#logout'
+
+  get 'signup', to: 'users#new', as: 'signup'
+  resources :users, only: [:create]
 
   resources :recipes do
     resource :like, only: [:create, :destroy]
