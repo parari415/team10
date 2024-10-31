@@ -25,6 +25,9 @@ Rails.application.routes.draw do
 
   resources :recipes do
     resource :like, only: [:create, :destroy]
+    collection do
+      get 'generate_recipe'
+      post 'generate_recipe'
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
