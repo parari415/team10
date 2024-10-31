@@ -1,0 +1,14 @@
+<h2>ログイン</h2>
+<%= form_with(url: login_path, method: :post, local: true) do |f| %>
+  <div>
+    <%= f.label :uid, "ユーザーID" %>
+    <%= f.text_field :uid %>
+  </div>
+  <div>
+    <%= f.label :pass, "パスワード" %>
+    <%= f.password_field :pass %>
+  </div>
+  <div>
+    <%= f.submit "ログイン" %>
+  </div>
+<% end %>

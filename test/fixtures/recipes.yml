@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  genre: MyString
+  ingredients: MyText
+  instructions: MyText
+  calories: 1
+  user: one
+
+two:
+  title: MyString
+  genre: MyString
+  ingredients: MyText
+  instructions: MyText
+  calories: 1
+  user: two

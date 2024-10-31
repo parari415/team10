@@ -1,0 +1,23 @@
+<%= form_with(model: @recipe, local: true) do |f| %>
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div>
+    <%= f.label :genre %>
+    <%= f.select :genre, ['フレンチ', 'イタリアン', '和食', '中華'] %>
+  </div>
+  <div>
+    <%= f.label :ingredients, "材料 (カンマで区切る)" %>
+    <%= f.text_area :ingredients %>
+  </div>
+  <div>
+    <%= f.label :instructions, "作り方" %>
+    <%= f.text_area :instructions %>
+  </div>
+  <div>
+    <%= f.label :calories, "カロリー" %>
+    <%= f.number_field :calories %>
+  </div>
+  <%= f.submit %>
+<% end %>
