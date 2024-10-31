@@ -1,2 +1,10 @@
-<h1>Recipes#show</h1>
-<p>Find me in app/views/recipes/show.html.erb</p>
+<h1><%= @recipe.title %></h1>
+
+<p><strong>ジャンル:</strong> <%= @recipe.genre %></p>
+<p><strong>材料:</strong> <%= @recipe.ingredients %></p>
+<p><strong>作り方:</strong> <%= @recipe.instructions %></p>
+<p><strong>カロリー:</strong> <%= @recipe.calories %> kcal</p>
+
+<%= link_to '編集', edit_recipe_path(@recipe) %> |
+<%= link_to '削除', recipe_path(@recipe), method: :delete, data: { confirm: '本当に削除しますか？' } %> |
+<%= link_to 'レシピ一覧に戻る', recipes_path %>

@@ -1,2 +1,10 @@
-<h1>Top#main</h1>
-<p>Find me in app/views/top/main.html.erb</p>
+<h1>ようこそ！</h1>
+<p><%= session[:login_uid] %>さん、ようこそ！</p>
+
+<nav>
+  <ul>
+    <li><%= link_to 'レシピ一覧', recipes_path %></li>
+    <li><%= link_to 'レシピを作成', new_recipe_path %></li>
+    <li><%= link_to 'ログアウト', logout_path, method: :delete %></li>
+  </ul>
+</nav>

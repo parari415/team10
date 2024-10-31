@@ -1,10 +1,12 @@
+<h1>新しいレシピを作成</h1>
+
 <%= form_with(model: @recipe, local: true) do |f| %>
   <div>
-    <%= f.label :title %>
+    <%= f.label :title, "料理名" %>
     <%= f.text_field :title %>
   </div>
   <div>
-    <%= f.label :genre %>
+    <%= f.label :genre, "ジャンル" %>
     <%= f.select :genre, ['フレンチ', 'イタリアン', '和食', '中華'] %>
   </div>
   <div>
@@ -19,5 +21,7 @@
     <%= f.label :calories, "カロリー" %>
     <%= f.number_field :calories %>
   </div>
-  <%= f.submit %>
+  <%= f.submit "作成" %>
 <% end %>
+
+<%= link_to 'レシピ一覧に戻る', recipes_path %>

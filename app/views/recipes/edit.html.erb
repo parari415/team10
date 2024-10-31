@@ -1,2 +1,27 @@
-<h1>Recipes#edit</h1>
-<p>Find me in app/views/recipes/edit.html.erb</p>
+<h1><%= @recipe.title %> を編集</h1>
+
+<%= form_with(model: @recipe, local: true) do |f| %>
+  <div>
+    <%= f.label :title, "料理名" %>
+    <%= f.text_field :title %>
+  </div>
+  <div>
+    <%= f.label :genre, "ジャンル" %>
+    <%= f.select :genre, ['フレンチ', 'イタリアン', '和食', '中華'], selected: @recipe.genre %>
+  </div>
+  <div>
+    <%= f.label :ingredients, "材料 (カンマで区切る)" %>
+    <%= f.text_area :ingredients, value: @recipe.ingredients %>
+  </div>
+  <div>
+    <%= f.label :instructions, "作り方" %>
+    <%= f.text_area :instructions, value: @recipe.instructions %>
+  </div>
+  <div>
+    <%= f.label :calories, "カロリー" %>
+    <%= f.number_field :calories, value: @recipe.calories %>
+  </div>
+  <%= f.submit "更新" %>
+<% end %>
+
+<%= link_to 'レシピ詳細に戻る', recipe_path(@recipe) %>
